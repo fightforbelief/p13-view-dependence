@@ -1,0 +1,188 @@
+{
+  "python": "3.12.10",
+  "platform": "Windows",
+  "sympy": "1.14.0",
+  "sha256": {
+    "benchmark.json": "42c99268b5835d7f20034ca7e2eadb08d08ca67140cc7016992e3b3d79bd94b1",
+    "study.py": "423267a01c705100a1343183749ad0a26f960474555bbdf9ceccae38e8fece05",
+    "test_study.py": "3bbb8dccc6c42e5422b11a2b97080510de4a654c736bcb771522a6064012eb95"
+  },
+  "diagonal_tilts_bp": [
+    1055.0202882121234,
+    -1055.0202882121234,
+    -273.84052372920075,
+    273.84052372920075,
+    -30.426724858800085,
+    30.426724858800085,
+    359.1572112696438,
+    0.0
+  ],
+  "max_baseline_difference_bp": 3.842788730356167,
+  "cases": {
+    "half_error_variance": {
+      "radius_units_0.0001": [
+        null,
+        null,
+        null
+      ],
+      "equicorrelation_zero": [
+        false,
+        false,
+        false
+      ],
+      "any_single_pair_zero": [
+        false,
+        false,
+        false
+      ],
+      "strict_witnesses": [
+        null,
+        null,
+        null
+      ],
+      "rounded_prior_radius": [
+        null,
+        null,
+        null
+      ]
+    },
+    "table6": {
+      "radius_units_0.0001": [
+        null,
+        null,
+        null
+      ],
+      "equicorrelation_zero": [
+        false,
+        false,
+        false
+      ],
+      "any_single_pair_zero": [
+        false,
+        false,
+        false
+      ],
+      "strict_witnesses": [
+        null,
+        null,
+        null
+      ],
+      "rounded_prior_radius": [
+        null,
+        null,
+        null
+      ]
+    },
+    "double_error_variance": {
+      "radius_units_0.0001": [
+        [
+          9170,
+          9171
+        ],
+        null,
+        [
+          8355,
+          8356
+        ]
+      ],
+      "equicorrelation_zero": [
+        true,
+        false,
+        false
+      ],
+      "any_single_pair_zero": [
+        false,
+        false,
+        true
+      ],
+      "strict_witnesses": [
+        {
+          "h": 1.0,
+          "nuisance_corr_fraction": -0.59,
+          "correlations_12_13_23": [
+            -0.636047592018391,
+            -0.247764497724389,
+            -0.59
+          ],
+          "gain": [
+            -0.0002740019351373615,
+            -0.296900728077697,
+            -0.09528425781995326
+          ]
+        },
+        null,
+        {
+          "h": 1.0,
+          "nuisance_corr_fraction": -1.0,
+          "correlations_12_13_23": [
+            -1.0,
+            -1.0,
+            1.0
+          ],
+          "gain": [
+            -0.0020213216312458915,
+            -0.2178006856690183,
+            0.00999733653198069
+          ]
+        }
+      ],
+      "rounded_prior_radius": [
+        [
+          9243,
+          9244
+        ],
+        null,
+        [
+          8149,
+          8150
+        ]
+      ]
+    },
+    "view_specific": {
+      "radius_units_0.0001": [
+        [
+          6994,
+          6995
+        ],
+        null,
+        null
+      ],
+      "equicorrelation_zero": [
+        false,
+        false,
+        false
+      ],
+      "any_single_pair_zero": [
+        true,
+        false,
+        false
+      ],
+      "strict_witnesses": [
+        {
+          "h": 1.0,
+          "nuisance_corr_fraction": -0.55,
+          "correlations_12_13_23": [
+            -0.7611655533687781,
+            -0.12301135518159785,
+            -0.55
+          ],
+          "gain": [
+            -0.00031420409879120325,
+            -0.3765010019800394,
+            -0.13501503619433922
+          ]
+        },
+        null,
+        null
+      ],
+      "rounded_prior_radius": [
+        [
+          7049,
+          7050
+        ],
+        null,
+        null
+      ]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "source": "Thomas Idzorek, A Step-by-Step Guide to the Black-Litterman Model, Tables 2, 5 and 6 and section 2.2, https://people.duke.edu/~charvey/Teaching/BA453_2005/Idzorek_onBL.pdf",
+  "assets": ["US bonds","International bonds","US large growth","US large value","US small growth","US small value","International developed equity","International emerging equity"],
+  "covariance_in_millionths": [
+    [1005,1328,-579,-675,121,128,-445,-437],
+    [1328,7277,-1307,-610,-2237,-989,1442,-1535],
+    [-579,-1307,59852,27588,63497,23036,32967,48039],
+    [-675,-610,27588,29609,26572,21465,20697,29854],
+    [121,-2237,63497,26572,102488,42744,39943,65994],
+    [128,-989,23036,21465,42744,32056,19881,32235],
+    [-445,1442,32967,20697,39943,19881,28355,35064],
+    [-437,-1535,48039,29854,65994,32235,35064,79958]],
+  "market_in_basis_points": [1934,2613,1209,1209,134,134,2418,349],
+  "P_in_tenths": [[0,0,0,0,0,0,10,0],[-10,10,0,0,0,0,0,0],[0,0,9,-9,1,-1,0,0]],
+  "q_in_basis_points": [525,25,200],
+  "risk_aversion": "3.07",
+  "table6_tilts_in_basis_points": [1054,-1054,-273,273,-30,30,363,0]
+}

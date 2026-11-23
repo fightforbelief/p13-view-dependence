@@ -1,0 +1,136 @@
+\documentclass[11pt]{article}
+\usepackage[margin=.92in]{geometry}
+\setlength{\emergencystretch}{1.1em}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\adj}{\operatorname{adj}}
+\title{Which Black--Litterman trades survive unknown dependence between views?}
+\author{Yunjie Guo \and Hanqing Yang\thanks{Corresponding author. \texttt{hanqing.yang189@gmail.com}}}
+\date{Independent Researcher, Suzhou, China}
+\begin{document}
+\maketitle
+\begin{abstract}
+A variance for each forecast fixes the diagonal of the view-error covariance in a Black--Litterman allocation. Which trades follow from those variances alone? We characterize the set of attainable allocations by a polygon inequality in view space. Every attainable allocation has an error-covariance witness of rank at most three. Deciding whether two factors suffice already contains the integer partition problem. For three views we derive a quartic test for the smallest share of error variance exposed to unknown dependence at which a tilt can vanish. In Idzorek's eight-asset example all three view trades retain their directions under unrestricted dependence at the benchmark variances. Doubling those variances permits two reversals. The developed-equity tilt can disappear at a share between 0.9170 and 0.9171, and the growth spread between 0.8355 and 0.8356. Equal-correlation and one-pair stress tests each miss one of these changes.
+\end{abstract}
+
+\section{The allocation question}
+Suppose a manager has an absolute forecast for developed equities and relative forecasts for two spreads. A forecast model, an analyst survey or an elicitation exercise supplies one error variance per view. Two reports may draw on the same release. Even correct marginal variances leave their joint error covariance open. A portfolio committee reviewing an overweight may ask whether any joint covariance consistent with the reported variances would eliminate it.
+
+Black and Litterman \cite{bl} combine portfolio views with an equilibrium prior. Idzorek \cite{idz} translates views into trades and discusses confidence elicitation. Bertsimas, Gupta and Paschalidis \cite{io} reformulate the problem by inverse optimization and examine sensitivity to view accuracy. Spears, Zohren and Roberts \cite{fusion} explicitly consider dependence in forecast fusion, including conservative fusion under incomplete information. We condition on the supplied views and their separate error scales and keep the original posterior update. The object of interest is its image over every admissible dependence matrix. One feasible matrix can refute a directional claim. Certifying a direction requires covering the whole set.
+
+The mathematical starting point is the balanced-vector criterion for a correlation matrix to have a prescribed null vector, reviewed with its earlier history by Saunderson et al.\ \cite{balance}. We reduce a prescribed nonzero covariance action to that null-vector problem after removing one known Gram direction. This yields a joint allocation test for any number of linearly independent views. We develop a separate projection onto a single trade direction. For three views this projection reduces to root isolation for a polynomial of degree at most four.
+
+\section{From posterior means to trade coefficients}
+Let $\Sigma\succ0$ be the return covariance, $w_0$ the benchmark, $\lambda>0$ risk aversion and $\pi=\lambda\Sigma w_0$ the equilibrium mean. Prior mean uncertainty is $\tau\Sigma$ with $\tau>0$. A full-row-rank $k\times n$ matrix $P$ specifies view portfolios and $q$ gives their forecasts. In the Gaussian update the view error is independent of prior error. Write $\tau\Omega$ for its covariance, so all view variances below are in units divided by $\tau$. Put
+\[
+ A=P\Sigma P^\top,\quad d=q-P\pi,\quad x=(A+\Omega)^{-1}d .
+\]
+The posterior mean and the unconstrained optimizer using fixed $\Sigma$ are
+\[
+ \mu=\pi+\Sigma P^\top x,\qquad w=w_0+P^\top x/\lambda .
+\]
+Full row rank gives $A\succ0$ even when $\Omega$ is singular. Each $x_i/\lambda$ multiplies one view portfolio. The map to $w$ is injective. For a proposed change $u$ first check that $\lambda u$ lies in the column space of $P^\top$, then solve $P^\top x=\lambda u$. An asset occurring in exactly one view has direction determined by that view coefficient and its loading. For overlapping views an asset tilt is a linear combination.
+
+Let $v_i>0$ be the reported variances, $D=\diag(v)$, and $\mathcal E(v)=\{K\succeq0:\diag K=v\}$. This set is compact and convex. Its continuous image under the update is compact and connected. Each individual linear exposure therefore spans a closed interval. A nonzero reference trade retains its strict sign exactly when zero is absent from that interval.
+
+\section{Joint attainability and the number of factors}
+\begin{theorem}\label{th:joint}
+For a proposed coefficient vector $x$ put $r=d-Ax$ and $e=x^\top r$. If $e<0$, or $e=0$ with $r\ne0$, the proposal is infeasible. For $e>0$ put $b_i=v_i-r_i^2/e$. For $e=0$ and $r=0$ put $b_i=v_i$. In either remaining case $x$ is attainable exactly when all $b_i\ge0$ and, writing $L_i=|x_i|\sqrt{b_i}$,
+\[
+                       2\max_i L_i\ \le\ \sum_i L_i .
+\]
+A feasible proposal has a witness of rank at most three, or at most two when $e=0$.
+\end{theorem}
+\begin{proof}
+Write $K_{ij}=g_i^\top g_j$ with $\|g_i\|^2=v_i$. The update holds exactly when $Kx=r$. With $s=\sum_i x_i g_i$, this requires $g_i^\top s=r_i$ and $\|s\|^2=e$. If $e>0$, take the direction of $s$ as the first axis. Each vector has first coordinate $r_i/\sqrt e$ and residual length $\sqrt{b_i}$. The weighted first coordinates sum to $\sqrt e$. The weighted residual vectors must sum to zero.
+
+Vectors of lengths $L_1,\ldots,L_k$ can close in a plane exactly when the longest is no longer than all others combined. Indeed, the attainable lengths of a sum of planar vectors form an interval by continuity on a connected product of circles. Adding a vector of length $l$ to an interval $[a,b]$ gives the interval from $\max(0,a-l,l-b)$ to $b+l$. Induction yields lower endpoint $\max(0,2\max L_i-\sum L_i)$. Choose a closed configuration and divide each nonzero-weight vector by $x_i$. For a zero weight, choose any residual of its required length. Appending the specified first coordinates gives $Kx=r$. One axis and one plane suffice. When $e=0$, $s=0$ forces $r=0$ and the construction uses just the plane.
+\end{proof}
+
+\begin{corollary}\label{cor:rank}
+At positive energy a witness of rank at most two exists exactly when signs $\epsilon_i\in\{-1,1\}$ can be chosen with $\sum_i\epsilon_i L_i=0$. Deciding existence of such a witness for rational inputs is NP-hard, even with $A=I$.
+\end{corollary}
+\begin{proof}
+Removing the axis along $s$ from a two-dimensional Gram representation leaves a line. Weighted residuals must be signed lengths, and any closing assignment gives a representation. Given positive integer PARTITION inputs $m_1,\ldots,m_k$, take $x_i=1$, $r_i=k$ for every $i$, $d=x+r$ and $v_i=1+m_i^2$. Then $e=k^2$, $L_i=m_i$, and the data have polynomial bit length. The signed equality is precisely an equal-sum partition. Three unit inputs satisfy the polygon inequality but admit no signing. Thus the bound of three is sharp.
+\end{proof}
+
+Once $Ax$ has been formed, unrestricted membership takes a linear number of real arithmetic operations and square roots. Exact bit complexity can depend on the cost of comparing sums of radicals. The rank bound is per allocation. Different candidates may require different witnesses.
+
+\section{How much dependence can eliminate a trade?}
+Consider the nested classes
+\[
+ \mathcal E_h=(1-h)D+h\mathcal E(v),\qquad 0\le h\le1 .
+\]
+The component $(1-h)D$ reserves a fraction $1-h$ of each variance for uncorrelated errors. The remaining component may have any correlation structure. Equivalently the error correlation matrix has smallest eigenvalue at least $1-h$. This implies each off-diagonal correlation magnitude is at most $h$ and simultaneously controls their joint spectrum. A trade's cancellation radius is the smallest $h$ admitting $x_i=0$, or infinity if zero is unattainable. At $h<1$ every admissible covariance is positive definite.
+
+For a full candidate $x$, Theorem~\ref{th:joint} applies with $A$ replaced by $A+(1-h)D$ and variances $hv$, with $h=0$ given directly by the diagonal update. For a single coordinate, set $J=\{1,\ldots,k\}\setminus\{i\}$. Fix the nuisance block $B\succeq0$ of the dependent component with diagonal $hv_J$, and define
+\[
+ M=A_{JJ}+(1-h)D_{JJ}+B,\qquad y=M^{-1}d_J,\qquad c=d_i-A_{iJ}y.
+\]
+\begin{theorem}\label{th:sign}
+For this block $B$ a covariance completion can cancel trade $i$ exactly when
+\begin{equation}\label{eq:sign}
+                     c^2\le hv_i\,y^\top B y .
+\end{equation}
+If the inequality is strict, both trade directions are possible.
+\end{theorem}
+\begin{proof}
+Write $b$ for the cross-covariance vector between view $i$ and the nuisance block. The Schur complement of $M$ in $A+\Omega$ is positive. The sign of $x_i$ therefore equals that of $c-b^\top y$. Factor $B=GG^\top$. The possible $b$ are $Gz$ for $\|z\|\le\sqrt{hv_i}$ by Gram completion, with unused variance supplied by an extra orthogonal coordinate. The range of $b^\top y$ is the closed interval centered at zero with radius $\sqrt{hv_i}\,\|G^\top y\|$. This includes singular $B$.
+\end{proof}
+
+For three views, $J=\{j,k\}$ and $t=B_{jk}$ ranges over $|t|\le h\sqrt{v_jv_k}$. Write $N(t)=\adj(M)d_J$ and $H(t)=\det M>0$. Equation~\eqref{eq:sign} becomes
+\[
+ F_h(t)=\big[d_iH(t)-A_{iJ}N(t)\big]^2-hv_i N(t)^\top B(t)N(t)\le0.
+\]
+Here $H$ is quadratic and $N$ affine. At rational inputs and rational $h$, $F_h$ has rational coefficients and degree at most four. If $F_h(0)>0$, feasibility is equivalent to a real root in the closed admissible interval, including a double root or a singular endpoint. If $F_h(0)\le0$, zero is already feasible. Exact algebraic root isolation and bisection on nested $h$ give a global bracket. More than one nuisance covariance remains when $k>3$.
+
+\paragraph{Why sweeping each pair can fail.}
+Take $A=D=I_3$ and $d=(1,3/2,-3/2)^\top$. Along the equal-correlation path the contributions of the other views to the first cancel by symmetry. Varying one correlation at a time also preserves the positive first coefficient. For a pair involving view one the correction to $c=1$ is at most $3/4$ in magnitude. Yet
+\[
+ \Omega=\begin{pmatrix}1&0.7&-0.7\\0.7&1&0\\-0.7&0&1\end{pmatrix}
+ \quad\Longrightarrow\quad x_1=-5/151 .
+\]
+The matrix is strictly positive definite (determinant $0.02$). For nuisance covariance $t$ the maximum correction to $c$ is $(3/2)\sqrt{2h(h-t)}/(2-t)$. Its square is maximized at $t=-h$ for $h\le2/3$ and $t=2h-2$ thereafter, by differentiation on $[-h,h]$. In the second regime its square is $(9/4)h/[2(2-h)]$, first equaling one at $h=16/17$. This construction supplies an independent exact check of the numerical procedure.
+
+\section{An audit of the eight-asset benchmark}
+We use Idzorek's printed market weights and covariance matrix (Tables 2 and 5), $\lambda=3.07$, and the three forecasts in their original order. They concern international developed equity ($5.25\%$ excess return), international minus US bonds (25 basis points), and US growth minus value (two percentage points, with 90/10 large/small weights on each side). The views have disjoint asset supports. At $v=\diag A$ the diagonal solution raises developed equity by 3.592 percentage points, lowers international bonds by 10.550 points and lowers large growth by 2.738 points. Across eight assets the maximum discrepancy from the printed Table 6 tilts is 3.84 basis points of portfolio weight. Small discrepancies can matter at a boundary, so we repeat the classification with the independently rounded implied returns in Table 1.
+
+\begin{table}[ht]
+\centering
+\caption{First dependence share admitting a zero view trade. A dash denotes a certified nonzero sign at every share through one. Finite entries give lower (infeasible) and upper (feasible) bounds.}
+\begin{tabular}{lccc}\toprule
+Variance multipliers & Developed equity & Bond spread & Growth spread\\\midrule
+$(1/2,1/2,1/2)$ & --- & --- & ---\\
+$(1,1,1)$ & --- & --- & ---\\
+$(2,2,2)$ & $(.9170,.9171]$ & --- & $(.8355,.8356]$\\
+$(3,1,7/13)$ & $(.6994,.6995]$ & --- & ---\\\bottomrule
+\end{tabular}
+\end{table}
+
+The first three specifications multiply the Table 6 variances by a common scalar. The fourth uses scalar odds $(1-c_i)/c_i$ for the quoted confidences $(.25,.50,.65)$. For an isolated view these odds give exactly the fraction $c_i$ of the perfect-confidence adjustment. All views are then combined in one update. This row specifies a loading convention and does not require empirical calibration of the percentages.
+
+At the benchmark, the directions of seven affected asset tilts follow from the margins and the prior for every permissible covariance. The eighth asset has zero direct tilt throughout because its column of $P$ is zero. Under double variance both the developed-equity and growth directions can reverse. The rank-one error correlation with off-diagonals $(-1,-1,+1)$ in $(12,13,23)$ order produces $x_1=-0.00202$ and $x_3=0.009997$. In allocation units these imply a 0.066 percentage point developed-equity underweight and a 0.293 point large-growth overweight. Strict inequalities persist under a sufficiently small mixture with $D$. The bond spread sign survives all four specifications.
+
+For comparison we examine two restricted stress families over their entire legal intervals. All three pairwise correlations move together on $[-1/2,1]$ in the first family. In the second, one pair ranges over $[-1,1]$ and the other two remain at zero, repeated for each pair. Along each path the Cramer numerator for a tilt is at most quadratic, so endpoints and any interior vertex suffice. At double variance the equal-correlation sweep detects cancellation only for developed equity. The one-pair sweep detects it only for growth. At the view-specific variances only the one-pair sweep detects the developed-equity cancellation. The analytical example shows that even the union of the sweeps can miss a strict reversal.
+
+Using the printed implied returns leaves every finite/infinite classification intact. In the double-variance row the finite brackets move to $(.9243,.9244]$ and $(.8149,.8150]$. The view-specific developed-equity bracket moves to $(.7049,.7050]$. Four decimal places describe computational resolution conditional on an input reconstruction. The difference between reconstructions describes input sensitivity.
+
+\section{Interpretation and scope}
+A team that supplies separate confidence assessments can ask for two outputs. A proposed whole book can be checked by one covariance-action test. A sign claimed to follow from those assessments calls for a projection over all admissible books. The cancellation radius quantifies the dependence allowance required to remove that sign, and a covariance witness allows the challenged decision to be replayed.
+
+The benchmark is a published worked example. The forecasts, expected returns and covariance are fixed within each comparison. The results address conditional allocation identification. Realized profitability and the forecasting skill of a text model require separate evidence. Long-only or fully invested reoptimization and posterior predictive risk each change the link from $x$ to trades. For many overlapping views the joint membership test remains available, but the univariate algorithm for sign projection specifically uses three views. Empirical bounds on selected cross-correlations would further restrict the feasible set and require a completion test respecting those bounds.
+
+\paragraph{Reproducibility.} The accompanying code includes the transcribed inputs, exact polynomial decisions, reversal witnesses and a second reconstruction using printed prior returns. Python 3.12.10 and SymPy 1.14.0 were used for the reported calculations.
+\paragraph{Declarations.} The authors report no specific funding and no conflicts of interest.
+
+\small\enlargethispage{2\baselineskip}\begin{thebibliography}{9}
+\bibitem{bl} F. Black and R. Litterman (1992). Global portfolio optimization. \emph{Financial Analysts Journal} 48(5), 28--43.
+\bibitem{idz} T. Idzorek (2004). \emph{A Step-by-Step Guide to the Black--Litterman Model: Incorporating User-Specified Confidence Levels}. Working paper, Tables 1--6. \href{https://people.duke.edu/~charvey/Teaching/BA453_2005/Idzorek_onBL.pdf}{Source document}.
+\bibitem{io} D. Bertsimas, V. Gupta and I. C. Paschalidis (2012). Inverse optimization: A new perspective on the Black--Litterman model. \emph{Operations Research} 60(6), 1389--1403.
+\bibitem{fusion} T. Spears, S. Zohren and S. Roberts (2023). View fusion vis-à-vis a Bayesian interpretation of Black--Litterman for portfolio allocation. \emph{Journal of Financial Data Science} 5(3), 23--49.
+\bibitem{balance} J. Saunderson, V. Chandrasekaran, P. A. Parrilo and A. S. Willsky (2012). Diagonal and low-rank matrix decompositions, correlation matrices, and ellipsoid fitting. \emph{SIAM Journal on Matrix Analysis and Applications} 33(4), 1395--1416.
+\end{thebibliography}
+\end{document}
