@@ -1,0 +1,456 @@
+[
+  {
+    "year": 1980,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 1981,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 1982,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank": 3,
+      "active_view": 4,
+      "enclosure": [
+        0.24616034239078896,
+        0.24616034239079013
+      ]
+    }
+  },
+  {
+    "year": 1983,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 1984,
+    "min": {
+      "rank": 3,
+      "active_view": 2,
+      "enclosure": [
+        -0.9578975565582187,
+        -0.9578975565582178
+      ]
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 1985,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 1986,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 1987,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank": 3,
+      "active_view": 1,
+      "enclosure": [
+        0.8573438076755825,
+        0.857343807675584
+      ]
+    }
+  },
+  {
+    "year": 1988,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank": 3,
+      "active_view": 1,
+      "enclosure": [
+        3.4910705520062773,
+        3.49107055200628
+      ]
+    }
+  },
+  {
+    "year": 1989,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 1990,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 1991,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 1992,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 1993,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 1994,
+    "min": {
+      "rank": 3,
+      "active_view": 2,
+      "enclosure": [
+        0.0009925284150757994,
+        0.0009925284150761884
+      ]
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 1995,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 1996,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 1997,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 1998,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 1999,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2000,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2001,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2002,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2003,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2004,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2005,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2006,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2007,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2008,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2009,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2010,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2011,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2012,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2013,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2014,
+    "min": {
+      "rank": 3,
+      "active_view": 4,
+      "enclosure": [
+        -2.1514564460262107,
+        -2.1514564460262084
+      ]
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2015,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2016,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2017,
+    "min": {
+      "rank": 3,
+      "active_view": 1,
+      "enclosure": [
+        -3.7597948208853382,
+        -3.759794820885335
+      ]
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2018,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2019,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2020,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2021,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2022,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2023,
+    "min": {
+      "rank": 3,
+      "active_view": 4,
+      "enclosure": [
+        -0.2340713287414599,
+        -0.23407132874145917
+      ]
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2024,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  },
+  {
+    "year": 2025,
+    "min": {
+      "rank_at_most": 2
+    },
+    "max": {
+      "rank_at_most": 2
+    }
+  }
+]

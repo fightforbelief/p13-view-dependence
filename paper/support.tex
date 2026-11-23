@@ -1,0 +1,38 @@
+\section{Sharp limits on a position}\label{sec:support}
+When several views contain the same asset, the size of its trade is a linear exposure $c^\top x$; for asset $j$, $c=P_{\cdot j}/\lambda$. Consider the maximum over all admissible covariances. Negating $c$ gives the minimum. Throughout this section $c\ne0$ and $d\ne0$; the excluded cases give the constant zero exposure. Let $\mathcal E_h=(1-h)D+h\mathcal E(v)$ reserve the fraction $1-h$ of each variance for uncorrelated error. The statements extend to $\mathcal E_h$, $0<h\le1$, by using $A+(1-h)D$ and $hv$ in place of $A$ and $v$. Thus all rank statements at restricted $h$ concern the dependent component.
+
+Calafiore and El Ghaoui \cite{uncertain} derive ellipsoidal bounds for uncertain linear systems using semidefinite relaxation. Here the fixed diagonal supplies one quadratic constraint per view, and the residual polygon determines when the outer support is attained. Define an outer set that discards only the polygon condition and the zero-energy closure test:
+\[
+ C=\{x:f_i(x)\le0\text{ for all }i\},\qquad
+ f_i(x)=(d_i-a_i^\top x)^2-v_i(d^\top x-x^\top Ax),
+\]
+where $a_i$ is column $i$ of $A$. Each inequality defines an ellipsoid, since its quadratic part $H_i=a_i a_i^\top+v_i A$ is positive definite. For $x=(1-\varepsilon)A^{-1}d$ and sufficiently small $\varepsilon>0$, all inequalities hold strictly. The set $C$ is compact and strictly convex. It has a unique support point in each nonzero direction.
+
+\begin{theorem}[Exposure endpoints]\label{th:support}
+Let $x_C$ maximize $c^\top x$ on $C$. If $x_C$ passes Theorem~\ref{th:joint}, it is the unique attainable maximizer. Otherwise a maximizing covariance of rank at most two exists. With three views every linear exposure has a maximizer and minimizer of rank at most two.
+\end{theorem}
+\begin{proof}
+The attainable set lies in $C$. At zero energy, a feasible point has a planar witness by Theorem~\ref{th:joint}. At positive energy, equality in the polygon inequality allows all residual vectors with nonzero weights to be collinear. Zero-weight vectors can also be chosen in the same plane as the resultant and this line. Hence equality gives rank at most two.
+
+It remains to consider an attainable maximizer with positive energy and strict polygon inequality. In a neighborhood of that point relative to $C$, the energy stays positive, residual lengths are continuous and the polygon inequality stays strict. Every point of $C$ in that neighborhood is attainable. A local maximum of a linear functional on a convex set is global, so this point must equal $x_C$. It must have some $f_i=0$, since it cannot be an interior maximum. That constraint sets $L_i=0$. When $k=3$ only two lengths remain and a strict polygon inequality is impossible. Apply the same argument to $-c$.
+\end{proof}
+
+Both alternatives matter. For $A=I_3$, $v_i=1$, $d=c=(1,0,0)^\top$, $C$ contains $x=d$ with value one. The actual maximum is $3/4$. Indeed $0\preceq K\preceq3I$ and $(1+t)^{-1}\le1-t/4$ on $[0,3]$, hence $e_1^\top(I+K)^{-1}e_1\le3/4$; $K$ with all entries one attains equality. The minimum is $1/2$ by the Schur complement, attained at $K=I$. A planar witness for this minimum repeats the second vector as the third and chooses the first orthogonal to both.
+
+\paragraph{Four views.} A change in dimension introduces a genuine obstruction. A strict polygon at a maximizing point with four views and at least one active constraint requires exactly one active constraint and three strictly positive lengths forming a nondegenerate triangle. These lengths cannot close on a line. Such an endpoint needs rank three. Conversely, every endpoint with no rank-two witness has precisely this form, by the proof above. Near a point with one active constraint all other ellipsoids are slack, so the maximizer is the support point of that individual ellipsoid. This yields a finite decision rule without optimizing over covariance matrices. For each $i$ let
+\[
+ g_i=d_i a_i+\tfrac12v_id,\quad m_i=H_i^{-1}g_i,\quad u_i=H_i^{-1}c,\qquad
+ z_i=m_i+u_i\sqrt{(g_i^\top m_i-d_i^2)/(c^\top u_i)} .
+\]
+Completing the square shows that $z_i$ uniquely maximizes $c^\top x$ on $f_i\le0$. Check the four candidates for positive energy, nonnegative residual variances and strict polygon closure. A passing candidate is feasible and reaches the individual ellipsoid bound, so it is the unique global maximizer and needs rank three. If none passes, a rank-at-most-two witness attains the maximum. This classification gives the endpoint value directly in the rank-three case. The other case still requires optimization over planar configurations for its value.
+
+For example, take $A=I_4$, $v_i=1$, $d=(2,1,1,1)^\top$ and $c=(-2,1,1,1)^\top$. The candidate $x=(1,1,1,1)^\top$ has residual lengths $(0,1,1,1)$. Its Gram witness comprises one unit axis and three unit vectors $120^\circ$ apart in the orthogonal plane. For every displacement $z$, $f_1(x+z)=c^\top z+\|z\|^2+z_1^2$. Feasibility forces $c^\top z<0$ at any other point. In particular, searching only rank two misses an exposed endpoint, even though it suffices for every exposure one dimension lower.
+
+\paragraph{Certified computation for three views.}
+Rotate three planar unit vectors so that the first is $(1,0)$. Each of the other two equals
+\[
+ s\big((1-t^2)/(1+t^2),\,2t/(1+t^2)\big),\quad -1\le t\le1,\quad s\in\{-1,1\}.
+\]
+Their pairwise dot products produce the dependent correlation matrix. Four square charts cover every witness required by Theorem~\ref{th:support}. On a chart the exposure is a rational function. Multiplying its Cramer numerator and its determinant denominator by $[(1+t_1^2)(1+t_2^2)]^3$ gives polynomials of degree at most six in each coordinate. The denominator is strictly positive because $A\succ0$.
+
+We use the rational Bernstein enclosure \cite{bernstein}. On a box with positive denominator coefficients, the rational function is a weighted average of the corresponding numerator-to-denominator coefficient ratios. Box corners give attainable values. We bisect boxes, discarding a box when its upper bound cannot improve the best feasible lower bound. Subdivision also resolves boxes with nonpositive denominator coefficient bounds. The signed common-correlation family uses four univariate cubic charts on $[-h/2,h]$. Interpolation at rational nodes, basis conversion and subdivisions use outward enclosures, including the square roots of input variances. Each reported endpoint is enclosed to within 0.025 percentage points of portfolio weight. This is a deterministic numerical error bound conditional on the inputs.
